@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   free_tab.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 13:10:42 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/04 14:33:25 by asauvage         ###   ########.fr       */
+/*   Created: 2026/02/04 16:20:17 by asauvage          #+#    #+#             */
+/*   Updated: 2026/02/04 16:23:59 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_strlen(const char *str)
+void	free_t(char **tab)
 {
 	int	i;
 
 	i = 0;
-	while (str && str[i])
-		i++;
-	return (i);
+	while (tab[i])
+		free(tab[i++]);
+	free(tab);
 }

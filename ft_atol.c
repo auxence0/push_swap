@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 13:10:42 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/04 14:33:25 by asauvage         ###   ########.fr       */
+/*   Created: 2026/02/04 15:16:37 by asauvage          #+#    #+#             */
+/*   Updated: 2026/02/04 15:18:19 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_strlen(const char *str)
+long	ft_atol(const char *nptr)
 {
-	int	i;
+	long	nb;
+	int		i;
+	int		m;
 
 	i = 0;
-	while (str && str[i])
+	m = 1;
+	nb = 0;
+	while (nptr[i] == ' ' || ('\t' <= nptr[i] && nptr[i] <= '\r'))
 		i++;
-	return (i);
+	if (nptr[i] == '+' || nptr[i] == '-')
+	{
+		if (nptr[i] == '-')
+			m = m * -1;
+		i++;
+	}
+	while ('0' <= nptr[i] && nptr[i] <= '9')
+	{
+		nb = nb * 10 + nptr[i] - '0';
+		i++;
+	}
+	return (m * nb);
 }
