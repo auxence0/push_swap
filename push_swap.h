@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 16:06:42 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/04 16:01:30 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/05 13:57:26 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,26 @@
 
 # include "libft/libft.h"
 
+typedef	struct s_node
+{
+	struct s_node	*next;
+	struct s_node	*pre;
+	int				num;
+	int				index;
+}					t_node;
+
+
 typedef struct s_stack
 {
-	long	nb;
-	int		index;
-	t_stack	pre;
-	t_stack	next;
+	int		size;
+	t_node	*top;
+	t_node	*bot;
 }				t_stack;
 
 char			*split_numbers(char **nbs, t_stack *a);
 char			**ft_split_space(char const *s);
 long			ft_atol(const char *nptr);
+void			ft_free_t(char **tab);
+void		ft_free_int(int *tab);
 
 #endif

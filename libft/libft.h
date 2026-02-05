@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 10:56:53 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/04 14:34:04 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/05 13:42:35 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char				**ft_split(char const *s, char c);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 size_t				ft_strlcpy(char *dest, const char *src, size_t size);
 t_list				*ft_lstnew(void *content);
-int					ft_strlen(const char *str);
+size_t				ft_strlen(const char *str);
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
