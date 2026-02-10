@@ -1,29 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/03 16:08:07 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/10 17:08:08 by asauvage         ###   ########.fr       */
+/*   Created: 2026/02/10 17:09:34 by asauvage          #+#    #+#             */
+/*   Updated: 2026/02/10 19:42:39 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+void	rn(t_stack *n)
 {
-	t_stack a;
-	t_stack	b;
+	t_node	*tmp_node;
 
-	ft_bzero(&a, sizeof(t_stack));
-	ft_bzero(&b, sizeof(t_stack));
-	if (ac < 2)
-	{
-		ft_printf("No arg given\n");
-		return (1);
-	}
-	split_numbers(&av[1], &a);
-	return (0);
+	if (n->size < 2)
+		return ;
+	tmp_node = n->top;
+	n->top = n->top->next;
+	n->top->pre = NULL;
+	n->bot->next = tmp_node;
+	tmp_node->pre = n->bot;
+	n->bot = tmp_node;
+	n->bot->next = NULL;
+}
+
+void	ra(t_stack *a)
+{
+	ft_printf("ra\n");
+	rn(a);
+}
+
+void	rb(t_stack *b)
+{
+	ft_printf("rb\n");
+	rn(b);
+}
+
+void	rr(t_stack *a, t_stack *b)
+{
+	ft_printf("rr\n");
+	rn(a);
+	rn(b);
 }

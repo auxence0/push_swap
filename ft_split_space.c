@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 15:11:53 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/04 15:14:22 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/10 14:28:39 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static size_t	count_w(char const *s)
 		while (s[i] && ft_isspace(s[i]))
 			i++;
 		j = i;
-		while (s[i] && ft_isspace(s[i]))
+		while (s[i] && !ft_isspace(s[i]))
 			i++;
 		if (j < i)
 			count++;

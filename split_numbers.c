@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 16:12:39 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/05 14:20:11 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/10 20:06:03 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,19 +63,16 @@ int	len_tab(char **tab)
 	return (i);
 }
 
-int	*conv_char_int(int *num, char *str)
+void	conv_char_int(int *num, int i, char *str)
 {
-	int		i;
 	int		j;
 	char	**str_num;
 
-	i = 0;
-	while (num[i])
-		i++;
 	str_num = ft_split_space(str);
 	if (!str_num)
 	{
-		ft_free_int(num);
+		if (num)
+			free(num);
 		exit(1);
 	}
 	j = 0;
@@ -83,49 +80,82 @@ int	*conv_char_int(int *num, char *str)
 	{
 		if (ft_atol(str_num[j]) < INT_MIN || ft_atol(str_num[j]) > INT_MAX)
 		{
+			ft_putstr_fd("Error\n", 2);
 			ft_free_t(str_num);
-			ft_free_int(num);
+			if (num)
+				free(num);
 			exit(1);
 		}
 		num[i++] = ft_atoi(str_num[j++]);
 	}
-	return (num);
+	ft_free_t(str_num);
+}
+
+int	len_nb(char *str)
+{
+	int	i;
+	int	j;
+	int	count;
+
+	i = 0;
+	count = 0;
+	while (str[i])
+	{
+		while (ft_isspace(str[i]))
+			i++;
+		j = i;
+		while (str[i] && !ft_isspace(str[i]))
+			i++;
+		if (j < i)
+			count++;
+	}
+	return (count);
 }
 
 int	*creat_int_array(char **nbs, int size)
 {
 	int	*tab_num;
 	int	i;
+	int	index_tab;
 
-	tab_num = ft_calloc(sizeof(int), size + 1);
+	tab_num = malloc(sizeof(int) * (size + 1));
 	if (!tab_num)
 		exit(1);
 	i = 0;
+	index_tab = 0;
 	while (nbs[i])
-		tab_num = conv_char_int(tab_num, nbs[i++]);
+	{
+		if (i == 0)
+			conv_char_int(tab_num, index_tab, nbs[i]);
+		else
+			conv_char_int(tab_num, index_tab, nbs[i]);
+		index_tab += len_nb(nbs[i]);
+		i++;
+	}
 	return (tab_num);
 }
 
-void	check_double(int *tab_num)
+void	check_double(int *tab_num, int size)
 {
 	int	i;
 	int	j;
-	int	tmp_int;
 
 	i = 0;
-	while (tab_num[i + 1])
+	while (i < size - 1)
 	{
 		j = i + 1;
-		tmp_int = tab_num[i++];
-		while (tab_num[j])
+		while (j < size)
 		{
-			if (tmp_int == tab_num[j++])
+			if (tab_num[i] == tab_num[j])
 			{
-				ft_free_int(tab_num);
+				if (tab_num)
+					free(tab_num);
 				ft_putstr_fd("Error\n", 2);
-				exit (1);
+				exit(1);
 			}
+			j++;
 		}
+		i++;
 	}
 }
 
@@ -136,7 +166,12 @@ char	*split_numbers(char **nbs, t_stack *a)
 
 	(void)a;
 	size = verif_numbers(nbs);
+	if (!size)
+		exit(0);
 	tab_num = creat_int_array(nbs, size);
-	check_double(tab_num);
+	check_double(tab_num, size);
+	creat_linked_list(a, tab_num, size);
+	if (tab_num)
+		free(tab_num);
 	return (0);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: asauvage <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/03 16:32:09 by asauvage          #+#    #+#              #
-#    Updated: 2026/02/03 16:32:11 by asauvage         ###   ########.fr        #
+#    Updated: 2026/02/10 20:06:52 by asauvage         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,11 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
 SRC = main.c \
-	  split_numbers.c
+	  split_numbers.c \
+	  ft_split_space.c \
+	  ft_atol.c \
+	  free_tab.c \
+	  linked_list.c
 
 NAME = push_swap
 

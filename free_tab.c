@@ -6,26 +6,13 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 16:20:17 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/05 13:57:09 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/10 14:02:12 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 void	ft_free_t(char **tab)
-{
-	int	i;
-
-	i = 0;
-	if (tab)
-	{
-		while (tab[i])
-			free(tab[i++]);
-		free(tab);
-	}
-}
-
-void	ft_free_int(int *tab)
 {
 	int	i;
 

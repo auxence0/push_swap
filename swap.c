@@ -1,29 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/03 16:08:07 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/10 17:08:08 by asauvage         ###   ########.fr       */
+/*   Created: 2026/02/10 18:09:38 by asauvage          #+#    #+#             */
+/*   Updated: 2026/02/10 18:22:11 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+void	sn(t_stack *n)
 {
-	t_stack a;
-	t_stack	b;
+	t_node	*tmp_node;
 
-	ft_bzero(&a, sizeof(t_stack));
-	ft_bzero(&b, sizeof(t_stack));
-	if (ac < 2)
-	{
-		ft_printf("No arg given\n");
-		return (1);
-	}
-	split_numbers(&av[1], &a);
-	return (0);
+	tmp_node = n->top;
+	n->top = n->top->next;
+	tmp_node->next = n->top->next;
+	tmp_node->pre = n->top;
+	n->top->next = tmp_node;
+	n->top->pre = NULL;
+}
+
+void	sa(t_stack *a)
+{
+	ft_printf("sa\n");
+	sn(a);
+}
+
+void	sb(t_stack *b)
+{
+	ft_printf("sb\n");
+	sn(b);
+}
+void	ss(t_stack *a, t_stack *b)
+{
+	ft_printf("ss\n");
+	sn(a);
+	sn(b);
 }
