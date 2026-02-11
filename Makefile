@@ -6,13 +6,18 @@
 #    By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/03 16:32:09 by asauvage          #+#    #+#              #
-#    Updated: 2026/02/11 11:25:26 by asauvage         ###   ########.fr        #
+#    Updated: 2026/02/11 12:58:43 by asauvage         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -I.
+
+NAME = push_swap
+
+SRC_DIR = src
+OBJ_DIR = obj
 
 SRC = main.c \
 	  split_numbers.c \
@@ -24,9 +29,12 @@ SRC = main.c \
 	  push.c \
 	  rotate_reverse.c \
 	  rotate.c \
-	  swap.c
+	  swap.c \
+	  free_stack.c
+	  
 
-NAME = push_swap
+SRC := $(SRC:%=$(SRC_DIR)/%)
+OBJ := $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 LIBFT_PATH = ./libft
 LIBFT_LIB = $(LIBFT_PATH)/libft.a
@@ -34,24 +42,20 @@ LIBFT_INC = $(LIBFT_PATH)
 
 INC = push_swap.h
 
-OBJ = $(SRC:.c=.o)
-
-all: $(LIBFT_LIB) $(MLX_LIB) $(NAME)
+all: $(LIBFT_LIB) $(NAME)
 
 $(LIBFT_LIB):
 	make -C $(LIBFT_PATH)
 
-$(MLX_LIB):
-	make -C $(MLX_PATH)
-
 $(NAME): $(OBJ) $(LIBFT_LIB)
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT_LIB) -o $(NAME)
 
-%.o: %.c $(INC)
-	$(CC) $(CFLAGS) -I. -I $(LIBFT_INC) -c $< -o $@ -g
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	mkdir -p $(@D)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ_DIR)
 	make -C $(LIBFT_PATH) clean
 
 fclean: clean

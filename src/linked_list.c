@@ -6,18 +6,24 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 15:37:21 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/10 20:11:30 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/11 11:50:36 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	creat_node(long num, t_node *node)
+t_node	*creat_node(long num)
 {
+	t_node	*node;
+
+	node = malloc(sizeof(t_node));
+	if (!node)
+		return (NULL);
 	node->num = num;
 	node->index = -1;
 	node->pre = NULL;
 	node->next = NULL;
+	return (node);
 }
 
 void	push_bottom(t_stack *a, t_node *node)
@@ -41,14 +47,20 @@ void	push_bottom(t_stack *a, t_node *node)
 void	creat_linked_list(t_stack *a, int *nb, int size)
 {
 	int		i;
-	t_node node;
+	t_node	*node;
 
 	a->size = size;
 	i = 0;
 	while (i < size)
 	{
-		creat_node(nb[i], &node);
-		push_bottom(a, &node);
+		node = creat_node(nb[i]);
+		if (!node)
+		{
+			if (nb)
+				free(nb);
+			exit (1);
+		}
+		push_bottom(a, node);
 		i++;
 	}
 }

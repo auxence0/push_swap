@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 11:16:01 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/11 11:24:52 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/11 11:52:30 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 
 void	algo_2(t_stack *a)
 {
-	if (a->top < a->bot)
+	if (a->top->num < a->bot->num)
+	{
+		free_stack(a);
 		exit (0);
+	}
 	sa(a);
 }
 

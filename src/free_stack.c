@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/03 16:08:07 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/11 11:26:31 by asauvage         ###   ########.fr       */
+/*   Created: 2026/02/11 11:52:43 by asauvage          #+#    #+#             */
+/*   Updated: 2026/02/11 11:55:57 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+void	free_stack(t_stack *n)
 {
-	t_stack a;
-	t_stack	b;
+	t_node	*tmp_node;
 
-	ft_bzero(&a, sizeof(t_stack));
-	ft_bzero(&b, sizeof(t_stack));
-	if (ac < 2)
+	while (n->top->next)
 	{
-		ft_printf("No arg given\n");
-		return (1);
+		tmp_node = n->top->next;
+		if (n->top)
+			free(n->top);
+		n->top = tmp_node;
 	}
-	split_numbers(&av[1], &a);
-	algo_sort(&a, &b);
-	return (0);
 }
