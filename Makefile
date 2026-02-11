@@ -6,7 +6,7 @@
 #    By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/03 16:32:09 by asauvage          #+#    #+#              #
-#    Updated: 2026/02/11 12:58:43 by asauvage         ###   ########.fr        #
+#    Updated: 2026/02/11 13:34:56 by asauvage         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ NAME = push_swap
 SRC_DIR = src
 OBJ_DIR = obj
 
-SRC = main.c \
+SRCS = main.c \
 	  split_numbers.c \
 	  ft_split_space.c \
 	  ft_atol.c \
@@ -33,8 +33,8 @@ SRC = main.c \
 	  free_stack.c
 	  
 
-SRC := $(SRC:%=$(SRC_DIR)/%)
-OBJ := $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+SRCS := $(SRCS:%=$(SRC_DIR)/%)
+OBJS := $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 LIBFT_PATH = ./libft
 LIBFT_LIB = $(LIBFT_PATH)/libft.a
@@ -47,15 +47,15 @@ all: $(LIBFT_LIB) $(NAME)
 $(LIBFT_LIB):
 	make -C $(LIBFT_PATH)
 
-$(NAME): $(OBJ) $(LIBFT_LIB)
-	$(CC) $(CFLAGS) $(OBJ) $(LIBFT_LIB) -o $(NAME)
+$(NAME): $(OBJS) $(LIBFT_LIB)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT_LIB) -o $(NAME)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	mkdir -p $(@D)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ_DIR)
+	rm -rf $(OBJ_DIR)
 	make -C $(LIBFT_PATH) clean
 
 fclean: clean
