@@ -6,7 +6,7 @@
 #    By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/03 16:32:09 by asauvage          #+#    #+#              #
-#    Updated: 2026/02/10 20:06:52 by asauvage         ###   ########.fr        #
+#    Updated: 2026/02/11 11:25:26 by asauvage         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,12 @@ SRC = main.c \
 	  ft_split_space.c \
 	  ft_atol.c \
 	  free_tab.c \
-	  linked_list.c
+	  linked_list.c \
+	  algo.c \
+	  push.c \
+	  rotate_reverse.c \
+	  rotate.c \
+	  swap.c
 
 NAME = push_swap
 
