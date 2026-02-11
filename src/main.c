@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 16:08:07 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/11 11:51:32 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/11 14:13:38 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,7 @@ int	main(int ac, char **av)
 	}
 	split_numbers(&av[1], &a);
 	algo_sort(&a, &b);
+	free_stack(&a);
+	free_stack(&b);
 	return (0);
 }

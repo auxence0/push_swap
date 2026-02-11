@@ -6,7 +6,7 @@
 #    By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/03 16:32:09 by asauvage          #+#    #+#              #
-#    Updated: 2026/02/11 13:34:56 by asauvage         ###   ########.fr        #
+#    Updated: 2026/02/11 13:37:00 by asauvage         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,14 +23,13 @@ SRCS = main.c \
 	  split_numbers.c \
 	  ft_split_space.c \
 	  ft_atol.c \
-	  free_tab.c \
 	  linked_list.c \
 	  algo.c \
 	  push.c \
 	  rotate_reverse.c \
 	  rotate.c \
 	  swap.c \
-	  free_stack.c
+	  free.c
 	  
 
 SRCS := $(SRCS:%=$(SRC_DIR)/%)

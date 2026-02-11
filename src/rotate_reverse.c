@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 18:07:56 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/10 18:11:22 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/11 14:21:55 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	rrn(t_stack *n)
 	n->bot->next = NULL;
 	n->top->pre = tmp_node;
 	tmp_node->next = n->bot;
+	tmp_node->pre = NULL;
 	n->top = tmp_node;
-	n->top->pre = NULL;
 }
 
 void	rrb(t_stack *b)
