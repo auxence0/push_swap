@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   get_index_stack.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/04 16:20:17 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/11 17:50:45 by asauvage         ###   ########.fr       */
+/*   Created: 2026/02/11 16:28:59 by asauvage          #+#    #+#             */
+/*   Updated: 2026/02/11 16:46:32 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free_t(char **tab)
+void	get_index(t_stack *stack)
 {
-	int	i;
+	t_node	*nb;
+	t_node	*cmp;
+	int		index;
 
-	i = 0;
-	if (tab)
+	nb = stack->top;
+	while (nb)
 	{
-		while (tab[i])
-			free(tab[i++]);
-		free(tab);
+		index = 0;
+		cmp = stack->top;
+		while (cmp)
+		{
+			if (cmp->num < nb->num)
+				index++;
+			cmp = cmp->next;
+		}
+		nb->index = index;
+		nb = nb->next;
 	}
-}
-
-void	free_stack(t_stack *n)
-{
-	t_node	*tmp_node;
-
-	while (n->top)
-	{
-		tmp_node = n->top->next;
-		if (n->top)
-			free(n->top);
-		n->top = tmp_node;
-	}
-	n->bot = NULL;
 }

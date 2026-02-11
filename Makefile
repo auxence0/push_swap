@@ -6,7 +6,7 @@
 #    By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/03 16:32:09 by asauvage          #+#    #+#              #
-#    Updated: 2026/02/11 16:23:00 by asauvage         ###   ########.fr        #
+#    Updated: 2026/02/11 17:40:25 by asauvage         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,9 @@ SRCS = main.c \
 	  rotate.c \
 	  swap.c \
 	  free.c \
-	  verif_sort.c
+	  verif_sort.c \
+	  get_index_stack.c \
+	  bubble_sort.c
 	  
 
 SRCS := $(SRCS:%=$(SRC_DIR)/%)
