@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 16:06:42 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/11 11:56:14 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/11 16:22:47 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ long				ft_atol(const char *nptr);
 int					*creat_int_array(char **nbs, int size);
 int					len_tab(char **tab);
 int					len_nb(char *str);
+int					verif_sort(t_stack *n);
 void				ft_free_t(char **tab);
 void				ft_free_int(int *tab);
 void				pb(t_stack *a, t_stack *b);

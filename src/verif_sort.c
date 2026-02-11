@@ -1,47 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_reverse.c                                   :+:      :+:    :+:   */
+/*   verif_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/10 18:07:56 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/11 15:18:37 by asauvage         ###   ########.fr       */
+/*   Created: 2026/02/11 16:20:41 by asauvage          #+#    #+#             */
+/*   Updated: 2026/02/11 16:25:19 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rrn(t_stack *n)
+int	verif_sort(t_stack *n)
 {
-	t_node	*tmp_node;
+	t_node	*node;
+	int		verif;
 
-	if (n->size < 2)
-		return ;
-	tmp_node = n->bot;
-	n->bot = tmp_node->pre;
-	n->bot->next = NULL;
-	tmp_node->next = n->top;
-	tmp_node->pre = NULL;
-	n->top->pre = tmp_node;
-	n->top = tmp_node;
-}
-
-void	rrb(t_stack *b)
-{
-	ft_printf("rrb\n");
-	rrn(b);
-}
-
-void	rra(t_stack *a)
-{
-	ft_printf("rra\n");
-	rrn(a);
-}
-
-void	rrr(t_stack *a, t_stack *b)
-{
-	ft_printf("rrr\n");
-	rra(a);
-	rra(b);
+	node = n->top;
+	verif = node->num;
+	node = node->pre;
+	while (node)
+	{
+		if (verif < node->num)
+			return (0);
+		verif = node->num;
+		node = node->next;
+	}
+	return (1);
 }
