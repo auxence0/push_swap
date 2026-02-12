@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 11:18:16 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/12 15:01:49 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/12 15:46:25 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,14 @@ void	rotate_or_rrev_index(t_stack *n, int index)
 	while (node)
 	{
 		if (node->index == index && i <= mid)
-			mid = 1;
+			i = 1;
 		if (node->index == index && i > mid)
-			mid = 0;
+			i = 0;
 		node = node->next;
 	}
 	while (n->top->index != index)
 	{
-		if (mid)
+		if (i)
 			ra(n);
 		else
 			rra(n);
