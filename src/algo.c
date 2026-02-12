@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 11:16:01 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/12 15:01:27 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/12 17:56:08 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	rotate_or_rrev(t_stack *n)
 	min = min_stack(n);
 	node = n->top;
 	mid = n->size / 2;
-	i = 1;
+	i = 0;
 	while (node)
 	{
 		if (node->num == min && i <= mid)
@@ -79,6 +79,7 @@ int	rotate_or_rrev(t_stack *n)
 		if (node->num == min && i > mid)
 			return (0);
 		node = node->next;
+		i++;
 	}
 	return (0);
 }
@@ -130,7 +131,6 @@ void	algo_sort(t_stack *a, t_stack *b)
 	else
 	{
 		get_index(a);
-		// bubble_sort(a, b);
 		chunck(a, b);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 16:20:41 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/11 16:25:19 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/12 17:18:27 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int	verif_sort(t_stack *n)
 
 	node = n->top;
 	verif = node->num;
-	node = node->pre;
+	node = node->next;
 	while (node)
 	{
-		if (verif < node->num)
+		if (verif > node->num)
 			return (0);
 		verif = node->num;
 		node = node->next;

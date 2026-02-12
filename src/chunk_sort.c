@@ -6,38 +6,36 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 11:18:16 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/12 15:46:25 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/12 18:17:29 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	search_top(t_stack *a, int index)
+int	rotate_or_rrev_delta(t_stack *n, int delta)
 {
+	int		count_bot;
+	int		count_top;
 	t_node	*node;
 
-	node = a->top;
+	count_bot = 0;
+	count_top = 0;
+	node = n->top;
 	while (node)
 	{
-		if (node->index <= index)
-			return (node->index);
-		node = node->next;
+		if (node->index <= delta)
+		{
+			if (node->index < n->size / 2)
+				count_bot++;
+			if (node->index > n->size / 2)
+				count_top++;
+		}
+			node = node->next;
 	}
-	return (0);
-}
-
-int	search_bot(t_stack *a, int index)
-{
-	t_node	*node;
-
-	node = a->bot;
-	while (node)
-	{
-		if (node->index <= index)
-			return (node->index);
-		node = node->pre;
-	}
-	return (0);
+	if (count_bot > count_top)
+		return (1);
+	else
+		return (0);
 }
 
 void	rotate_or_rrev_index(t_stack *n, int index)
@@ -45,41 +43,30 @@ void	rotate_or_rrev_index(t_stack *n, int index)
 	t_node	*node;
 	int		mid;
 	int		i;
+	int		direction;
 
 	node = n->top;
 	mid = n->size / 2;
 	i = 0;
+	direction = 1;
 	while (node)
 	{
 		if (node->index == index && i <= mid)
-			i = 1;
+			direction = 1;
 		if (node->index == index && i > mid)
-			i = 0;
+			direction = 0;
 		node = node->next;
+		i++;
 	}
 	while (n->top->index != index)
 	{
-		if (i)
-			ra(n);
+		if (direction)
+			rb(n);
 		else
-			rra(n);
+			rrb(n);
 	}
 }
 
-// void	move_to_b(t_stack *a, t_stack *b, int top_index, int bot_index)
-// {
-// 	t_node	*node;
-// 	int		dir;
-
-// 	node = a->top;
-// 	if (top_index < bot_index)
-// 		bot_index = top_index;
-// 	sort_b(b);
-// 	rotate_or_rrev_index(a, bot_index);
-// 	pb(a, b);
-// 	rotate_or_rrev_index(a, top_index);
-// 	pb(a,b);
-// }
 
 void	chunck(t_stack *a, t_stack *b)
 {
@@ -100,7 +87,12 @@ void	chunck(t_stack *a, t_stack *b)
         	i++;
         }
         else
-            ra(a);
+		{
+            if (rotate_or_rrev_delta(a, i + delta))
+				ra(a);
+			else
+				rra(a);
+		}
     }
 	while (b->top)
 	{
