@@ -6,37 +6,11 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 11:18:16 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/12 18:41:55 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/12 18:59:33 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	rotate_or_rrev_delta(t_stack *n, int delta)
-{
-	int		count_bot;
-	int		count_top;
-	t_node	*node;
-
-	count_bot = 0;
-	count_top = 0;
-	node = n->top;
-	while (node)
-	{
-		if (node->index <= delta)
-		{
-			if (node->index < n->size / 2)
-				count_bot++;
-			if (node->index > n->size / 2)
-				count_top++;
-		}
-			node = node->next;
-	}
-	if (count_bot > count_top)
-		return (1);
-	else
-		return (0);
-}
 
 void	rotate_or_rrev_index(t_stack *n, int index)
 {
@@ -87,12 +61,7 @@ void	chunck(t_stack *a, t_stack *b)
 			i++;
         }
         else
-		{
-            if (rotate_or_rrev_delta(a, i + delta))
-				ra(a);
-			else
-				rra(a);
-		}
+			ra(a);
     }
 	while (b->top)
 	{
