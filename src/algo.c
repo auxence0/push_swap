@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 11:16:01 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/12 10:57:32 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/12 15:01:27 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,7 @@ void	algo_sort(t_stack *a, t_stack *b)
 	else
 	{
 		get_index(a);
-		bubble_sort(a, b);
-		//chunk_sort(a, b);
+		// bubble_sort(a, b);
+		chunck(a, b);
 	}
 }

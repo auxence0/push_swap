@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 18:09:38 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/11 15:15:07 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/12 13:35:32 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 
 void	sn(t_stack *n)
 {
-	t_node	*first;
-	t_node	*second;
+	t_node	*fst;
+	t_node	*sec;
 	t_node	*third;
 
 	if (n->size < 2)
 		return ;
-	first = n->top;
-	second = first->next;
-	third = second->next;
-	n->top = second;
-	second->pre = NULL;
-	second->next = first;
-	first->pre = second;
+	fst = n->top;
+	sec = fst->next;
+	third = sec->next;
+	n->top = sec;
+	sec->pre = NULL;
+	sec->next = fst;
+	fst->pre = sec;
 	if (n->size == 2)
 	{
-		first->next = NULL;
-		n->bot = first;
+		fst->next = NULL;
+		n->bot = fst;
 	}
 	else
 	{
-		first->next = third;
-		third->pre = first;
+		fst->next = third;
+		third->pre = fst;
 	}
 }
 
