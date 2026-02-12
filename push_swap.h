@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 16:06:42 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/11 17:40:35 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/12 10:58:38 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int					len_tab(char **tab);
 int					len_nb(char *str);
 int					verif_sort(t_stack *n);
 int					min_stack(t_stack *n);
+int					rotate_or_rrev(t_stack *n);
 void				ft_free_t(char **tab);
 void				ft_free_int(int *tab);
 void				pb(t_stack *a, t_stack *b);

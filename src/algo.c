@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 11:16:01 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/11 17:40:13 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/12 10:57:32 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,11 +104,19 @@ void	algo_4_5(t_stack *a, t_stack *b)
 	if (verif_sort(a))
 		return ;
 	if (a->size == 5)
+	{
 		push_min_b(a, b);
-	push_min_b(a, b);
-	algo_3(a);
-	pa(a, b);
-	pa(a, b);
+		push_min_b(a, b);
+		algo_3(a);
+		pa(a, b);
+		pa(a, b);
+	}
+	else
+	{
+		push_min_b(a, b);
+		algo_3(a);
+		pa(a, b);
+	}
 }
 
 void	algo_sort(t_stack *a, t_stack *b)
