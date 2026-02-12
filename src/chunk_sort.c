@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 11:18:16 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/12 18:17:29 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/12 18:41:55 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,8 @@ void	chunck(t_stack *a, t_stack *b)
         {
             pb(a, b);
             if (b->top->index <= i)
-                rb(b);
-        	i++;
+				rb(b);
+			i++;
         }
         else
 		{
