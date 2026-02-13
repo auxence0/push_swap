@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 10:23:52 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/13 14:24:49 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/13 18:59:40 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int ac, char **av)
 		else
 			ft_putstr_fd("KO\n", 1);
 	}
-	else 
+	else
 		ft_putstr_fd("Error\n", 2);
 	free_stack(&a);
 	free_stack(&b);
