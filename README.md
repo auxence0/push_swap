@@ -49,11 +49,11 @@ ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker $ARG
 
 ## Resources
 
-# Documentation & References:
+### Documentation & References:
 - https://medium.com/@brakebein42/k-distribution-sort-applied-to-the-push-swap-problem-ae2d96d68376
 
 - https://github.com/o-reo/push_swap_visualizer
 
-# AI Usage:
+### AI Usage:
 
 - Large Language Models were utilized during the development of this project for technical documentation generation (writing this README), clarifying the structural breakdown of the dynamic sliding window chunk-sort mechanism, and refactoring minor utility functions in the standard C library implementation.
