@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 16:06:42 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/13 13:41:46 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/13 14:18:03 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int					len_nb(char *str);
 int					verif_sort(t_stack *n);
 int					min_stack(t_stack *n);
 int					rotate_or_rrev(t_stack *n);
+int					sort_input(t_stack *a, t_stack *b);
 void				ft_free_t(char **tab);
 void				ft_free_int(int *tab);
 void				pb(t_stack *a, t_stack *b);
@@ -75,6 +76,5 @@ void				chunck(t_stack *a, t_stack *b);
 void				algo_2(t_stack *a);
 void				algo_3(t_stack *a);
 void				algo_4_5(t_stack *a, t_stack *b);
-void				sort_input(t_stack *a, t_stack *b);
 
 #endif
