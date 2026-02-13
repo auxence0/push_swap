@@ -10,10 +10,12 @@ This specific implementation utilizes a dynamically sized **Chunk Sort** (or Sli
 ### Compilation
 The project includes a `Makefile` with standard rules.
 
-- To compile the main executable:
+- To compile the mandatory executable:
 ```bash
-  make bonus
+  make
 ```
+
+- To compile the bonus executable:
 
 - To remove object files:
 ```bash
@@ -44,3 +46,14 @@ To verify the output using the bonus checker:
 ```bash
 ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker $ARG
 ```
+
+## Resources
+
+# Documentation & References:
+- https://medium.com/@brakebein42/k-distribution-sort-applied-to-the-push-swap-problem-ae2d96d68376
+
+- https://github.com/o-reo/push_swap_visualizer
+
+# AI Usage:
+
+- Large Language Models were utilized during the development of this project for technical documentation generation (writing this README), clarifying the structural breakdown of the dynamic sliding window chunk-sort mechanism, and refactoring minor utility functions in the standard C library implementation.
