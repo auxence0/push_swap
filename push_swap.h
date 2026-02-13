@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 16:06:42 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/13 13:01:56 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/13 13:41:46 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void				ft_free_t(char **tab);
 void				ft_free_int(int *tab);
 void				pb(t_stack *a, t_stack *b);
 void				pa(t_stack *a, t_stack *b);
-void				pn(t_stack *n);
+void				pn(t_stack *a, t_stack *b);
 void				sa(t_stack *a);
 void				sb(t_stack *b);
 void				sn(t_stack *n);
