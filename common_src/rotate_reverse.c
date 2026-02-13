@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 18:07:56 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/11 15:18:37 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/13 13:11:32 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ void	rra(t_stack *a)
 void	rrr(t_stack *a, t_stack *b)
 {
 	ft_printf("rrr\n");
-	rra(a);
-	rra(b);
+	rrn(a);
+	rrn(b);
 }

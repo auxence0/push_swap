@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 10:23:52 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/13 11:25:25 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/13 13:36:39 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	split_numbers(&av[1], &a);
-	algo_sort(&a, &b);
+	sort_input(&a, &b);
 	if (verif_sort(&a) && !b.size)
-		ft_putstr_fd("OK\n", 1);
-	else
 		ft_putstr_fd("KO\n", 1);
+	else
+		ft_putstr_fd("OK\n", 1);
 	free_stack(&a);
 	free_stack(&b);
 	return (0);
