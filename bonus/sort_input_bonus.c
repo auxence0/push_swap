@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 10:52:02 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/13 13:35:24 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/13 13:52:58 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void	second_sort_input(char *operation, t_stack *a, t_stack *b)
 	else if (ft_strncmp(operation, "sb\n", 3))
 		sn(b);
 	else if (ft_strncmp(operation, "pa\n", 3))
-		pn(a);
+		pn(b, a);
 	else if (ft_strncmp(operation, "pb\n", 3))
-		pn(b);
+		pn(a, b);
 }
 
 void	sort_input(t_stack *a, t_stack *b)
