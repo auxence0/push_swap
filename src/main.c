@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 16:08:07 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/11 14:13:38 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/13 11:21:10 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int ac, char **av)
 {
-	t_stack a;
+	t_stack	a;
 	t_stack	b;
 
 	ft_bzero(&a, sizeof(t_stack));

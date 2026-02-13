@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 11:16:01 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/13 11:17:25 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/13 11:20:29 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void	algo_3(t_stack *a)
 		rra(a);
 	}
 }
-
 
 void	algo_sort(t_stack *a, t_stack *b)
 {

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 16:20:17 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/11 17:50:45 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/13 11:22:41 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,35 @@ void	free_stack(t_stack *n)
 		n->top = tmp_node;
 	}
 	n->bot = NULL;
+}
+
+int	len_tab(char **tab)
+{
+	int	i;
+
+	i = 0;
+	while (tab[i])
+		i++;
+	return (i);
+}
+
+int	len_nb(char *str)
+{
+	int	i;
+	int	j;
+	int	count;
+
+	i = 0;
+	count = 0;
+	while (str[i])
+	{
+		while (ft_isspace(str[i]))
+			i++;
+		j = i;
+		while (str[i] && !ft_isspace(str[i]))
+			i++;
+		if (j < i)
+			count++;
+	}
+	return (count);
 }

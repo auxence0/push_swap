@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 18:09:38 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/12 13:35:32 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/13 11:25:05 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	sb(t_stack *b)
 	ft_printf("sb\n");
 	sn(b);
 }
+
 void	ss(t_stack *a, t_stack *b)
 {
 	ft_printf("ss\n");

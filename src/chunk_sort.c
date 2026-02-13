@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 11:18:16 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/12 18:59:33 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/13 11:20:59 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,28 +41,27 @@ void	rotate_or_rrev_index(t_stack *n, int index)
 	}
 }
 
-
 void	chunck(t_stack *a, t_stack *b)
 {
-    int n;
-    int delta;
-    int i;
+	int	n;
+	int	delta;
+	int	i;
 
 	n = a->size;
 	delta = n / 20 + 7;
 	i = 0;
-    while (a->top)
-    {
-        if (a->top->index <= i + delta)
-        {
-            pb(a, b);
-            if (b->top->index <= i)
+	while (a->top)
+	{
+		if (a->top->index <= i + delta)
+		{
+			pb(a, b);
+			if (b->top->index <= i)
 				rb(b);
 			i++;
-        }
-        else
+		}
+		else
 			ra(a);
-    }
+	}
 	while (b->top)
 	{
 		rotate_or_rrev_index(b, b->size - 1);
