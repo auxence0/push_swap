@@ -6,7 +6,7 @@
 #    By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/03 16:32:09 by asauvage          #+#    #+#              #
-#    Updated: 2026/02/12 15:00:57 by asauvage         ###   ########.fr        #
+#    Updated: 2026/02/13 11:08:15 by asauvage         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,28 +15,35 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra -I.
 
 NAME = push_swap
+NAME_BONUS = checker
 
+SRC_BONUS = bonus
 SRC_DIR = src
 OBJ_DIR = obj
 
-SRCS = main.c \
-	  split_numbers.c \
-	  ft_split_space.c \
-	  ft_atol.c \
-	  linked_list.c \
-	  algo.c \
-	  push.c \
-	  rotate_reverse.c \
-	  rotate.c \
-	  swap.c \
-	  free.c \
-	  verif_sort.c \
-	  get_index_stack.c \
-	  chunk_sort.c
-	  
+COMMON_SRCS = split_numbers.c \
+			  ft_split_space.c \
+			  ft_atol.c \
+			  linked_list.c \
+			  algo.c \
+			  push.c \
+			  rotate_reverse.c \
+			  rotate.c \
+			  swap.c \
+			  free.c \
+			  verif_sort.c \
+			  get_index_stack.c \
+			  chunk_sort.c
 
-SRCS := $(SRCS:%=$(SRC_DIR)/%)
+SRC = main.c
+
+SRC_BONUS = main.c \
+			sort_input.c
+
+COMMON_SRCS := $(SRCS:%=$(SRC_DIR)/%)
+SRC := $(SRCS:%=$(SRC_DIR)/%)
 OBJS := $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+OBJS_BONUS := 
 
 LIBFT_PATH = ./libft
 LIBFT_LIB = $(LIBFT_PATH)/libft.a
