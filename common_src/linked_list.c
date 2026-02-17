@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 15:37:21 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/11 11:50:36 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/17 19:43:49 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	creat_linked_list(t_stack *a, int *nb, int size)
 		node = creat_node(nb[i]);
 		if (!node)
 		{
+			free_stack(a);
 			if (nb)
 				free(nb);
 			exit (1);
