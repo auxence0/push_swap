@@ -16,15 +16,23 @@ The project includes a `Makefile` with standard rules.
 ```
 
 - To compile the bonus executable:
+```bash
+  make bonus
+```
 
 - To remove object files:
 ```bash
   make clean
 ```
 
-- To remove obkect files and compiled binaries:
+- To remove object files and compiled binaries:
 ```bash
   make fclean
+```
+
+-To remake all:
+```bash
+  make re
 ```
 
 ### Execution
@@ -54,6 +62,9 @@ ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker $ARG
 
 - https://github.com/o-reo/push_swap_visualizer
 
+- https://github.com/SimonCROS/push_swap_tester
+
 ### AI Usage:
 
-- Large Language Models were utilized during the development of this project for technical documentation generation (writing this README), clarifying the structural breakdown of the dynamic sliding window chunk-sort mechanism, and refactoring minor utility functions in the standard C library implementation.
+* **README HELP :** AI was used in particular to improve this readme.
+* **ALGO HELP :** To help me find the best sorting algorithm, comparing radix base 2/4, chunk sort, and Turkish.
