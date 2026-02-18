@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 15:37:21 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/17 19:43:49 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/18 13:38:02 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	push_bottom(t_stack *a, t_node *node)
 	}
 }
 
-void	creat_linked_list(t_stack *a, int *nb, int size)
+void	create_linked_list(t_stack *a, int *nb, int size)
 {
 	int		i;
 	t_node	*node;

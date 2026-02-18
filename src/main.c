@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 16:08:07 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/13 11:21:10 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/18 12:51:43 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ int	main(int ac, char **av)
 	ft_bzero(&a, sizeof(t_stack));
 	ft_bzero(&b, sizeof(t_stack));
 	if (ac < 2)
-	{
-		ft_printf("No arg given\n");
-		return (1);
-	}
+		return (0);
 	split_numbers(&av[1], &a);
 	algo_sort(&a, &b);
 	free_stack(&a);

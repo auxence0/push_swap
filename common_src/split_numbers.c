@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 16:12:39 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/13 11:24:39 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/18 13:37:37 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,17 +46,14 @@ int	*creat_int_array(char **nbs, int size)
 	int	i;
 	int	index_tab;
 
-	tab_num = malloc(sizeof(int) * (size + 1));
+	tab_num = malloc(sizeof(int) * (size));
 	if (!tab_num)
 		exit(1);
 	i = 0;
 	index_tab = 0;
 	while (nbs[i])
 	{
-		if (i == 0)
-			conv_char_int(tab_num, index_tab, nbs[i]);
-		else
-			conv_char_int(tab_num, index_tab, nbs[i]);
+		conv_char_int(tab_num, index_tab, nbs[i]);
 		index_tab += len_nb(nbs[i]);
 		i++;
 	}
@@ -97,7 +94,7 @@ char	*split_numbers(char **nbs, t_stack *a)
 		exit(0);
 	tab_num = creat_int_array(nbs, size);
 	check_double(tab_num, size);
-	creat_linked_list(a, tab_num, size);
+	create_linked_list(a, tab_num, size);
 	if (tab_num)
 		free(tab_num);
 	return (0);

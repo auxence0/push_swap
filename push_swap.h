@@ -6,24 +6,15 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 16:06:42 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/13 14:18:03 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/18 13:37:54 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# ifndef INT_MAX
-#  define INT_MAX 2147483647
-
-# endif
-
-# ifndef INT_MIN
-#  define INT_MIN -2147483648
-
-# endif
-
 # include "libft/libft.h"
+# include <limits.h>
 
 typedef struct s_node
 {
@@ -67,7 +58,7 @@ void				ra(t_stack *a);
 void				rb(t_stack *b);
 void				rn(t_stack *n);
 void				rr(t_stack *a, t_stack *b);
-void				creat_linked_list(t_stack *a, int *nb, int size);
+void				create_linked_list(t_stack *a, int *nb, int size);
 void				algo_sort(t_stack *a, t_stack *b);
 void				free_stack(t_stack *n);
 void				get_index(t_stack *stack);
