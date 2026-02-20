@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 10:52:02 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/19 13:46:18 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/20 15:51:28 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,10 @@ int	sort_input(t_stack *a, t_stack *b)
 		else if (!second_sort_input(operation, a, b))
 		{
 			free(operation);
+			get_next_line(-1);
 			return (0);
 		}
 		free(operation);
 	}
-	get_next_line(-1);
 	return (1);
 }
