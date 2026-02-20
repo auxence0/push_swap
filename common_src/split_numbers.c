@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 16:12:39 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/18 13:37:37 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/20 15:45:24 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,6 @@ char	*split_numbers(char **nbs, t_stack *a)
 	int	*tab_num;
 
 	size = verif_numbers(nbs);
-	if (size < 2)
-		exit(0);
 	tab_num = creat_int_array(nbs, size);
 	check_double(tab_num, size);
 	create_linked_list(a, tab_num, size);
