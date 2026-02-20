@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 15:10:58 by asauvage          #+#    #+#             */
-/*   Updated: 2026/01/05 17:27:44 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/20 10:17:10 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,8 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 	{
-		free(stash);
+		if (stash)
+			free(stash);
 		return (0);
 	}
 	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
