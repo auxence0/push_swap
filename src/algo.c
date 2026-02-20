@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 11:16:01 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/18 15:52:00 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/20 17:26:53 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	algo_3(t_stack *a)
 	if (first < second && second > last && first > last)
 		rra(a);
 	if (first > second && second < last && first > last)
-		sa(a);
+		ra(a);
 	if (first > second && second > last && first > last)
 	{
 		sa(a);
