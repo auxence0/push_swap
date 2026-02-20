@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 16:20:41 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/18 13:10:38 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/20 14:42:06 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	verif_numbers(char **nbs)
 	{
 		if (!ft_strlen(nbs[i]))
 		{
-			ft_putstr_fd("Error \n", 2);
+			ft_putstr_fd("Error\n", 2);
 			exit (1);
 		}
 		i++;
