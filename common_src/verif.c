@@ -6,7 +6,7 @@
 /*   By: asauvage <asauvage@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 16:20:41 by asauvage          #+#    #+#             */
-/*   Updated: 2026/02/20 14:42:06 by asauvage         ###   ########.fr       */
+/*   Updated: 2026/02/24 19:16:47 by asauvage         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	verif_str(char *str)
 		if (i > 0 && ft_isdigit(str[i - 1]))
 			size++;
 	}
-	if (ft_strlen(str) == (size_t)i)
+	if (ft_strlen(str) == (size_t)i && size > 0)
 		return (size);
 	ft_putstr_fd("Error\n", 2);
 	exit(1);
